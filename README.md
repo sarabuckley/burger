@@ -15,11 +15,11 @@ The demo of the burger eating application can be found [here](https://warm-sprin
 
 To run the application locally, first clone this repository with the following command.
 
-	git clone git@github.com:sarabuckley/burger.git
+	git clone https://github.com/sarabuckley/burger.git
 	
 Next, install the application dependencies.
 
-	cd eat-da-burger
+	cd burger
 	npm install
 	
 Finally, run the node server locally.
