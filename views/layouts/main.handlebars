@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+
+		<title>MVC with Burgers!</title>
+		
+		<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+	
+<script>
+//This script accepts input from the HTML page and routes it to the burgers_controllers.js file which is on the server side and is listening for events.	
+
+$(function() {
+
+  $(".devourBtn").on("click", function(event) {
+    var id = $(this).data("id");
+    var eatenBurger = {
+      devoured: true
+    };
+    $.ajax("api/burgers/" + id, {
+      type: "PUT",
+      data: eatenBurger
+    }).then(
+      function() {
+        console.log("Ate the burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+    });    
+  
+  $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newBurger = {
+      name: $("#inputBox").val().trim(),
+    };
+
+    // Send the POST request.
+    $.ajax("api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("Created new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+});
+
+</script>
+	<body>
+		{{{ body }}}
+	</body>
+</html>
