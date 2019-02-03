@@ -9,7 +9,7 @@ The screen lists all burgers that are available to be eaten and all burgers that
 
 ## Demo
 
-The demo of the burger eating application can be found [here](https://warm-springs-64790.herokuapp.com/).
+The demo of the burger eating application can be found [here](https://shielded-mountain-31447.herokuapp.com/).
 
 ## Installation
 
